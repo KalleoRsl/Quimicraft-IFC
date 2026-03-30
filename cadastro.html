@@ -7,7 +7,6 @@
 </head>
 <body class="bg">
 
-    <!-- BOTÃO VOLTAR -->
     <a href="index.html" class="btn-voltar">←</a>
 
     <div class="container center">
@@ -16,21 +15,25 @@
 
             <h1 class="titulo-card">CADASTRO</h1>
 
-            <input type="text" placeholder="INSIRA SEU NOME DE USUÁRIO..." class="input">
+            <form action="php/cadastrar.php" method="POST">
 
-            <input type="password" placeholder="INSIRA SUA SENHA..." class="input">
+                <input type="text" name="nome" placeholder="INSIRA SEU NOME DE USUÁRIO..." class="input">
 
-            <input type="password" placeholder="CONFIRME SENHA..." class="input">
+                <input type="password" name="senha" placeholder="INSIRA SUA SENHA..." class="input">
 
-            <select class="input">
-                <option>SELECIONE A TURMA</option>
-                <option>Turma A</option>
-                <option>Turma B</option>
-            </select>
+                <input type="password" name="confirmar" placeholder="CONFIRME SENHA..." class="input">
 
-            <div class="btn-container">
-                <button class="btn">CADASTRAR</button>
-            </div>
+                <select name="turma" class="input">
+                    <option value="">SELECIONE A TURMA</option>
+                    <option value="1">Turma A</option>
+                    <option value="2">Turma B</option>
+                </select>
+
+                <div class="btn-container">
+                    <button type="submit" class="btn">CADASTRAR</button>
+                </div>
+
+            </form>
 
         </div>
 
