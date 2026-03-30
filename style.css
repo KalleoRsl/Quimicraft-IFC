@@ -1,0 +1,113 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.bg {
+    height: 100vh;
+    background: url("assets/bg.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.card {
+    background: #2c6ccf;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+
+.voltar {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+.titulo {
+    color: #a8c4ff;
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+.descricao {
+    max-width: 500px;
+    margin: 20px auto;
+    color: #000;
+    font-weight: bold;
+}
+
+
+.input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #8faeea;
+    color: white;
+    font-weight: bold;
+}
+
+
+.btn {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+    background: #5d7ce2;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #4a67c7;
+}
+
+
+.grande {
+    width: 300px;
+    font-size: 20px;
+}
+
+
+.rodape {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: #2c6ccf;
+    font-weight: bold;
+}
