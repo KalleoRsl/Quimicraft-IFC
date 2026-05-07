@@ -17,7 +17,6 @@ if ($senha != $confirmar) {
     exit();
 }
 
-
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
 
