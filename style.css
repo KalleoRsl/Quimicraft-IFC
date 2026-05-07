@@ -59,7 +59,7 @@ html, body {
     max-width: 500px;
     text-align: center;
     margin: 20px 0;
-
+    color: white;
     font-size: 16px;
     font-weight: bold;
 }
@@ -109,6 +109,9 @@ html, body {
     cursor: pointer;
 
     transition: 0.1s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn:active {
@@ -180,4 +183,225 @@ html, body {
     color: white;
 
     box-shadow: inset 2px 2px #5c7cd6;
+}
+
+.texto-aux {
+    margin-top: 18px;
+    text-align: center;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.texto-aux a {
+    color: #00145b;
+    text-decoration: underline;
+}
+
+/* ===== Menu principal (após login) ===== */
+.hud-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: #1e6fe0;
+    border-bottom: 4px solid rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    z-index: 5;
+}
+
+.hud-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hud-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #0f4fb3;
+    box-shadow: inset 0 0 0 4px rgba(255,255,255,0.25);
+}
+
+.hud-usertext {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.hud-username {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.hud-userinfo {
+    font-size: 9px;
+    opacity: 0.9;
+}
+
+.hud-sair {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.18);
+    border: 3px solid rgba(0,0,0,0.25);
+    border-radius: 10px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.25);
+}
+
+.hud-sair:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+
+.menu-wrap {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 30px 110px;
+}
+
+.menu-grid {
+    width: min(2320px, 100%);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 280px;
+    align-items: center;
+}
+
+.menu-btn {
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.6;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background: #1e6fe0;
+    border-radius: 12px;
+    border: 4px solid rgba(255,255,255,0.35);
+    box-shadow: 0 10px 0 rgba(0,0,0,0.25), 0 0 0 6px rgba(0,0,0,0.15) inset;
+    transition: transform 0.1s, filter 0.1s;
+}
+
+.menu-btn:hover {
+    filter: brightness(0.92);
+}
+
+.menu-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 0 rgba(0,0,0,0.25), 0 0 0 6px rgba(0,0,0,0.15) inset;
+}
+
+.hud-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 74px;
+    background: #1e6fe0;
+    border-top: 4px solid rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    z-index: 5;
+}
+
+.hud-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+}
+
+.hud-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hud-ico {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.18);
+    border: 3px solid rgba(0,0,0,0.25);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.25);
+    text-decoration: none;
+}
+
+.hud-ico:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+
+.ico {
+    width: 22px;
+    height: 22px;
+    display: block;
+    background: white;
+    opacity: 0.9;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.ico-user {
+    -webkit-mask-image: radial-gradient(circle at 50% 35%, #000 28%, transparent 30%),
+        radial-gradient(circle at 50% 120%, #000 60%, transparent 62%);
+    -webkit-mask-composite: source-in;
+    mask-image: radial-gradient(circle at 50% 35%, #000 28%, transparent 30%),
+        radial-gradient(circle at 50% 120%, #000 60%, transparent 62%);
+}
+
+.ico-friends {
+    -webkit-mask-image: radial-gradient(circle at 35% 40%, #000 18%, transparent 20%),
+        radial-gradient(circle at 60% 44%, #000 16%, transparent 18%),
+        radial-gradient(circle at 40% 115%, #000 45%, transparent 47%),
+        radial-gradient(circle at 68% 120%, #000 42%, transparent 44%);
+    mask-image: radial-gradient(circle at 35% 40%, #000 18%, transparent 20%),
+        radial-gradient(circle at 60% 44%, #000 16%, transparent 18%),
+        radial-gradient(circle at 40% 115%, #000 45%, transparent 47%),
+        radial-gradient(circle at 68% 120%, #000 42%, transparent 44%);
+}
+
+.ico-trophy {
+    -webkit-mask-image: linear-gradient(#000, #000);
+    mask-image: linear-gradient(#000, #000);
+    clip-path: polygon(25% 10%, 75% 10%, 85% 25%, 70% 45%, 60% 45%, 60% 65%, 68% 75%, 32% 75%, 40% 65%, 40% 45%, 30% 45%, 15% 25%);
+}
+
+@media (max-width: 900px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .menu-btn {
+        height: 130px;
+        font-size: 16px;
+    }
+    .hud-title {
+        font-size: 16px;
+    }
 }
