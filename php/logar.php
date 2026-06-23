@@ -34,5 +34,5 @@ $_SESSION['id_usuario'] = $usuario['id_usuario'];
 $_SESSION['nome_usuario'] = $usuario['nome_usuario'];
 $_SESSION['id_turma'] = $usuario['id_turma'];
 
-echo "<script>alert('Login realizado com sucesso!'); window.location='../principal.php';</script>";
+echo "<script>alert('Login realizado com sucesso!'); window.location='principal.php';</script>";
 ?>

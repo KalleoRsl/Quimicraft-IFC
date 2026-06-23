@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: login.html");
+    header("Location: ../html/login.html");
     exit();
 }
 
@@ -14,7 +14,7 @@ $turma = $_SESSION['id_turma'] ?? '';
 <head>
     <meta charset="UTF-8">
     <title>Quimicraft - Menu</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg">
 
@@ -27,7 +27,7 @@ $turma = $_SESSION['id_turma'] ?? '';
             </div>
         </div>
 
-        <a class="hud-sair" href="php/sair.php">SAIR</a>
+        <a class="hud-sair" href="sair.php">SAIR</a>
     </header>
 
     <main class="menu-wrap">

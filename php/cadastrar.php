@@ -24,7 +24,7 @@ $sql = "INSERT INTO usuarios (nome_usuario, senha, id_turma)
         VALUES ('$nome', '$senhaHash', '$turma')";
 
 if (mysqli_query($conexao, $sql)) {
-    echo "<script>alert('Cadastro realizado com sucesso!'); window.location='../index.html';</script>";
+    echo "<script>alert('Cadastro realizado com sucesso!'); window.location='../html/index.html';</script>";
 } else {
     echo "<script>alert('Erro ao cadastrar usuário!'); window.history.back();</script>";
 }

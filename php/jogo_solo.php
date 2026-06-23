@@ -1,8 +1,8 @@
 <?php
 session_start();
-// djsjdjflsjkdflksjdflksjdlfs
+
 if (!isset($_SESSION['id_usuario'])) {
-    header("Location: login.html");
+    header("Location: ../html/login.html");
     exit();
 }
 ?>
@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_usuario'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quimicraft - Jogar Solo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="solo-body">
 
@@ -61,6 +61,6 @@ if (!isset($_SESSION['id_usuario'])) {
         <span id="success-text">Sucesso! Você formou H₂O</span>
     </div>
 
-    <script src="js/jogo_solo.js"></script>
+    <script src="../js/jogo_solo.js"></script>
 </body>
 </html>
