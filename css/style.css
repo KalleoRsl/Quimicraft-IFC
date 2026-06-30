@@ -1157,3 +1157,225 @@ html, body {
         font-size: 9px;
     }
 }
+
+/* ===== AMIGOS ===== */
+
+.amigos-panel {
+    max-width: 640px;
+}
+
+.amigos-msg {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.amigos-msg-sucesso {
+    background: rgba(46, 204, 113, 0.2);
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+}
+
+.amigos-msg-erro {
+    background: rgba(231, 76, 60, 0.2);
+    border: 2px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.amigos-msg-info {
+    background: rgba(52, 152, 219, 0.2);
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+.amigos-section {
+    margin-bottom: 28px;
+}
+
+.amigos-section-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #fff;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.amigos-search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.amigos-search-input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+
+.amigos-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.amigos-search-input:focus {
+    outline: none;
+    border-color: #3a6fd1;
+}
+
+.amigos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.amigos-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.amigos-item-desafio {
+    flex-wrap: wrap;
+}
+
+.amigos-desafio-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.amigos-name {
+    font-size: 13px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.amigos-badge {
+    display: inline-block;
+    font-size: 9px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(58, 111, 209, 0.4);
+    color: #a8c4f0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.amigos-badge-pending {
+    background: rgba(241, 196, 15, 0.3);
+    color: #f1c40f;
+}
+
+.amigos-badge-win {
+    background: rgba(46, 204, 113, 0.3);
+    color: #2ecc71;
+}
+
+.amigos-badge-lose {
+    background: rgba(231, 76, 60, 0.3);
+    color: #e74c3c;
+}
+
+.amigos-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.amigos-inline-form {
+    display: inline;
+    margin: 0;
+}
+
+.amigos-btn {
+    width: auto;
+    min-width: 100px;
+    margin-top: 0;
+    font-size: 9px;
+    padding: 10px 16px;
+}
+
+.amigos-btn-small {
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: 8px;
+}
+
+.amigos-btn-danger {
+    background: linear-gradient(180deg, #c0392b 0%, #96281b 100%);
+    border-color: #e74c3c;
+}
+
+.amigos-btn-challenge {
+    background: linear-gradient(180deg, #27ae60 0%, #1e8449 100%);
+    border-color: #2ecc71;
+}
+
+.amigos-btn-secondary-link {
+    background: linear-gradient(180deg, #5a6a7a 0%, #3d4a56 100%);
+}
+
+.amigos-empty {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    padding: 12px 0;
+}
+
+.solo-opponent {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    color: #f1c40f;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.amigos-result-win {
+    color: #2ecc71 !important;
+}
+
+.amigos-result-lose {
+    color: #e74c3c !important;
+}
+
+.amigos-result-draw {
+    color: #f1c40f !important;
+}
+
+.amigos-result-wait {
+    color: #3498db !important;
+}
+
+#final-result {
+    display: block;
+    margin-top: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .amigos-search-form {
+        flex-direction: column;
+    }
+
+    .amigos-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .amigos-actions {
+        width: 100%;
+    }
+}
