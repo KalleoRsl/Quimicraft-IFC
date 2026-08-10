@@ -12,7 +12,7 @@ if (empty($nome) || empty($senha)) {
     exit();
 }
 
-$sql = "SELECT id_usuario, nome_usuario, senha, id_turma FROM usuarios WHERE nome_usuario = ? LIMIT 1";
+$sql = "SELECT id_usuario, nome_usuario, senha, id_turma, foto_perfil FROM usuarios WHERE nome_usuario = ? LIMIT 1";
 $stmt = mysqli_prepare($conexao, $sql);
 
 if (!$stmt) {
@@ -33,6 +33,7 @@ if (!$usuario || !password_verify($senha, $usuario['senha'])) {
 $_SESSION['id_usuario'] = $usuario['id_usuario'];
 $_SESSION['nome_usuario'] = $usuario['nome_usuario'];
 $_SESSION['id_turma'] = $usuario['id_turma'];
+$_SESSION['foto_perfil'] = $usuario['foto_perfil'] ?? '';
 
 echo "<script>alert('Login realizado com sucesso!'); window.location='principal.php';</script>";
 ?>

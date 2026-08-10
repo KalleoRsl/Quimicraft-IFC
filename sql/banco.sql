@@ -12,6 +12,7 @@ CREATE TABLE usuarios (
     senha VARCHAR(255) NOT NULL,
     id_turma INT,
     recorde INT DEFAULT 0,
+    foto_perfil VARCHAR(255) DEFAULT NULL,
     data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_turma) REFERENCES turmas(id_turma)
 );

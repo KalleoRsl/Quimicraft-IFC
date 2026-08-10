@@ -8,6 +8,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $nome = $_SESSION['nome_usuario'] ?? 'USUÁRIO';
 $turma = $_SESSION['id_turma'] ?? '';
+$foto = $_SESSION['foto_perfil'] ?? '';
 $id_usuario = (int)$_SESSION['id_usuario'];
 $mensagem = '';
 $tipo_mensagem = '';
@@ -151,6 +152,8 @@ while ($row = mysqli_fetch_assoc($resFin)) {
 mysqli_stmt_close($stmtFin);
 
 mysqli_close($conexao);
+
+include('includes/hud_usuario.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -164,7 +167,7 @@ mysqli_close($conexao);
 
     <header class="hud-top">
         <div class="hud-user">
-            <div class="hud-avatar" aria-hidden="true"></div>
+            <?php echo renderHudAvatar($foto); ?>
             <div class="hud-usertext">
                 <div class="hud-username"><?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8'); ?></div>
                 <div class="hud-userinfo"><?php echo $turma !== '' ? ('TURMA ' . htmlspecialchars((string)$turma, ENT_QUOTES, 'UTF-8')) : ''; ?></div>
@@ -289,20 +292,7 @@ mysqli_close($conexao);
         </div>
     </main>
 
-    <footer class="hud-bottom">
-        <a class="hud-ico" href="perfil.php" title="Perfil" aria-label="Perfil">
-            <span class="ico ico-user" aria-hidden="true"></span>
-        </a>
-        <div class="hud-title">QUIMICRAFT</div>
-        <div class="hud-right">
-            <a class="hud-ico" href="amigos.php" title="Amigos" aria-label="Amigos">
-                <span class="ico ico-friends" aria-hidden="true"></span>
-            </a>
-            <a class="hud-ico" href="ranking.php" title="Ranking" aria-label="Ranking">
-                <span class="ico ico-trophy" aria-hidden="true"></span>
-            </a>
-        </div>
-    </footer>
+    <?php echo renderHudFooter(); ?>
 
 </body>
 </html>
