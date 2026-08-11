@@ -2,28 +2,24 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <title>Redefinir Senha</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg form-page">
 
-    <a href="index.html" class="btn-voltar">←</a>
+    <a href="login.html" class="btn-voltar">←</a>
 
     <div class="container center">
 
         <div class="card">
 
-            <h1 class="titulo-card">CADASTRO</h1>
+            <h1 class="titulo-card">REDEFINIR SENHA</h1>
 
-            <form action="../php/cadastrar.php" method="POST">
+            <form action="../php/redefinir_senha.php" method="POST">
 
-                <input type="text" name="nome" placeholder="INSIRA SEU NOME DE USUÁRIO..." class="input">
+                <input type="text" name="nome" placeholder="INSIRA SEU NOME DE USUÁRIO..." class="input" required>
 
-                <input type="password" name="senha" placeholder="INSIRA SUA SENHA..." class="input">
-
-                <input type="password" name="confirmar" placeholder="CONFIRME SENHA..." class="input">
-
-                <select name="turma" class="custom-select-native">
+                <select name="turma" class="custom-select-native" required>
                     <option value="">SELECIONE A TURMA</option>
                     <optgroup label="INFO">
                         <option value="1">1 INFO A</option>
@@ -49,9 +45,18 @@
                     </optgroup>
                 </select>
 
+                <input type="password" name="senha" placeholder="INSIRA A NOVA SENHA..." class="input" required>
+
+                <input type="password" name="confirmar" placeholder="CONFIRME A NOVA SENHA..." class="input" required>
+
                 <div class="btn-container">
-                    <button type="submit" class="btn">CADASTRAR</button>
+                    <button type="submit" class="btn">REDEFINIR</button>
                 </div>
+
+                <p class="texto-aux">
+                    LEMBROU A SENHA?
+                    <a href="login.html">FAZER LOGIN</a>
+                </p>
 
             </form>
 

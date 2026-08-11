@@ -185,6 +185,118 @@ html, body {
     box-shadow: inset 2px 2px #5c7cd6;
 }
 
+html.form-page,
+body.form-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body.form-page.bg {
+    align-items: flex-start;
+    min-height: 100vh;
+    height: auto;
+}
+
+body.form-page .center {
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding: 70px 20px 60px;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.custom-select-native {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.custom-select-trigger {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-select-trigger::after {
+    content: "▼";
+    font-size: 8px;
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+.custom-select-trigger.is-open::after {
+    content: "▲";
+}
+
+.custom-select-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 20;
+    max-height: 220px;
+    overflow-y: auto;
+    background: #8faeea;
+    border: 3px solid #5c7cd6;
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.custom-select-panel.is-open {
+    display: block;
+}
+
+.custom-select-group {
+    padding: 10px 14px 6px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    color: #00145b;
+    background: #7a9de0;
+    border-bottom: 2px solid #5c7cd6;
+}
+
+.custom-select-option {
+    width: 100%;
+    padding: 12px 14px;
+    border: none;
+    border-bottom: 1px solid #5c7cd6;
+    background: #8faeea;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.custom-select-option:last-child {
+    border-bottom: none;
+}
+
+.custom-select-option:hover,
+.custom-select-option.is-selected {
+    background: #6f8df5;
+}
+
+.custom-select-option.is-selected {
+    color: #00145b;
+}
+
 .texto-aux {
     margin-top: 18px;
     text-align: center;
