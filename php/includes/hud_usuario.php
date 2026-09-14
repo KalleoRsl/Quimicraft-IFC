@@ -87,21 +87,30 @@ function renderHudAvatar(?string $foto): string
         . '</a>';
 }
 
+function renderHudUserBlock(?string $foto, string $nome): string
+{
+    $turma = renderHudTurma();
+
+    return '<div class="hud-user">'
+        . renderHudAvatar($foto)
+        . '<div class="hud-usertext">'
+        . '<div class="hud-username">' . htmlspecialchars($nome, ENT_QUOTES, 'UTF-8') . '</div>'
+        . '<div class="hud-userinfo">' . ($turma !== '' ? $turma : 'SEM TURMA') . '</div>'
+        . '</div>'
+        . '</div>';
+}
+
 function renderHudFooter(string $paginaAtiva = ''): string
 {
     $amigosAtivo = $paginaAtiva === 'amigos' ? ' hud-ico-active' : '';
     $rankingAtivo = $paginaAtiva === 'ranking' ? ' hud-ico-active' : '';
 
-    return '<footer class="hud-bottom">'
-        . '<div class="hud-bottom-left" aria-hidden="true"></div>'
-        . '<div class="hud-title">QUIMICRAFT</div>'
-        . '<div class="hud-right">'
-        . '<a class="hud-ico' . $amigosAtivo . '" href="amigos.php" title="Amigos" aria-label="Amigos">'
-        . '<span class="ico ico-friends" aria-hidden="true"></span>'
-        . '</a>'
-        . '<a class="hud-ico' . $rankingAtivo . '" href="ranking.php" title="Ranking" aria-label="Ranking">'
-        . '<span class="ico ico-trophy" aria-hidden="true"></span>'
-        . '</a>'
-        . '</div>'
+    return '<footer class="home-footer">'
+        . '<a class="' . trim($amigosAtivo) . '" href="amigos.php">'
+        . '<svg class="footer-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M16 11h6"/></svg>'
+        . 'AMIGOS</a>'
+        . '<a class="' . trim($rankingAtivo) . '" href="ranking.php">'
+        . '<svg class="footer-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 6H5a3 3 0 0 0 3 5M17 6h2a3 3 0 0 1-3 5"/></svg>'
+        . 'RANKING</a>'
         . '</footer>';
 }

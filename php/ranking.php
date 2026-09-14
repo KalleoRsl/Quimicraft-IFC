@@ -81,13 +81,7 @@ mysqli_close($conexao);
 <body class="bg ranking-body">
 
     <header class="hud-top">
-        <div class="hud-user">
-            <?php echo renderHudAvatar($foto); ?>
-            <div class="hud-usertext">
-                <div class="hud-username"><?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8'); ?></div>
-                <div class="hud-userinfo"><?php echo renderHudTurma(); ?></div>
-            </div>
-        </div>
+        <?php echo renderHudUserBlock($foto, $nome); ?>
         <a class="hud-sair" href="principal.php">VOLTAR</a>
     </header>
 

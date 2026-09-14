@@ -165,13 +165,7 @@ include('includes/hud_usuario.php');
 <body class="bg ranking-body">
 
     <header class="hud-top">
-        <div class="hud-user">
-            <?php echo renderHudAvatar($foto); ?>
-            <div class="hud-usertext">
-                <div class="hud-username"><?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8'); ?></div>
-                <div class="hud-userinfo"><?php echo renderHudTurma(); ?></div>
-            </div>
-        </div>
+        <?php echo renderHudUserBlock($foto, $nome); ?>
         <a class="hud-sair" href="principal.php">VOLTAR</a>
     </header>
 
@@ -231,7 +225,13 @@ include('includes/hud_usuario.php');
                     <ul class="amigos-list">
                         <?php foreach ($amigos as $amigo): ?>
                             <li class="amigos-item">
-                                <span class="amigos-name"><?php echo htmlspecialchars($amigo['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                <div class="amigos-identity">
+                                    <span class="amigos-avatar" aria-hidden="true"></span>
+                                    <div>
+                                        <span class="amigos-name"><?php echo htmlspecialchars($amigo['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                        <div class="amigos-status">Pronto para desafiar</div>
+                                    </div>
+                                </div>
                                 <form method="post" action="jogo_amigos.php" class="amigos-inline-form">
                                     <input type="hidden" name="acao" value="desafiar">
                                     <input type="hidden" name="id_amigo" value="<?php echo (int)$amigo['id_usuario']; ?>">

@@ -2,43 +2,41 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar - Quimicraft</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="bg">
+<body class="bg form-page">
 
-    <a href="index.html" class="btn-voltar">←</a>
+    <a href="index.html" class="btn-voltar" aria-label="Voltar">←</a>
 
     <div class="container center">
-
+        <h1 class="brand-logo">QUIMI<span class="logo-soft">CRAFT</span></h1>
         <div class="card">
-
-            <h1 class="titulo-card">LOGIN</h1>
+            <h1 class="titulo-card">ENTRAR</h1>
 
             <form action="../php/logar.php" method="POST">
+                <label class="field-label" for="nome">NOME DE USUÁRIO</label>
+                <input id="nome" type="text" name="nome" placeholder="Seu nome de usuário" class="input">
 
-                <input type="text" name="nome" placeholder="INSIRA SEU NOME DE USUÁRIO..." class="input">
-
-                <input type="password" name="senha" placeholder="INSIRA SUA SENHA..." class="input">
+                <label class="field-label" for="senha">SENHA</label>
+                <input id="senha" type="password" name="senha" placeholder="Sua senha" class="input">
 
                 <div class="btn-container">
                     <button type="submit" class="btn">ENTRAR</button>
                 </div>
 
                 <p class="texto-aux">
-                    NÃO TEM LOGIN?
-                    <a href="cadastro.html">CADASTRE-SE</a>
+                    Não tem login?
+                    <a href="cadastro.html">Cadastre-se</a>
                 </p>
 
                 <p class="texto-aux">
-                    ESQUECEU A SENHA?
-                    <a href="redefinir_senha.html">REDEFINIR</a>
+                    Esqueceu a senha?
+                    <a href="redefinir_senha.html">Redefinir</a>
                 </p>
-
             </form>
-
         </div>
-
     </div>
 
     <script src="../js/alerta.js"></script>

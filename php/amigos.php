@@ -228,13 +228,7 @@ include('includes/hud_usuario.php');
 <body class="bg ranking-body">
 
     <header class="hud-top">
-        <div class="hud-user">
-            <?php echo renderHudAvatar($foto); ?>
-            <div class="hud-usertext">
-                <div class="hud-username"><?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8'); ?></div>
-                <div class="hud-userinfo"><?php echo renderHudTurma(); ?></div>
-            </div>
-        </div>
+        <?php echo renderHudUserBlock($foto, $nome); ?>
         <a class="hud-sair" href="principal.php">VOLTAR</a>
     </header>
 
@@ -266,7 +260,13 @@ include('includes/hud_usuario.php');
                         <ul class="amigos-list">
                             <?php foreach ($resultados_busca as $user): ?>
                                 <li class="amigos-item">
-                                    <span class="amigos-name"><?php echo htmlspecialchars($user['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                    <div class="amigos-identity">
+                                        <span class="amigos-avatar" aria-hidden="true"></span>
+                                        <div>
+                                            <span class="amigos-name"><?php echo htmlspecialchars($user['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                            <div class="amigos-status">Jogador</div>
+                                        </div>
+                                    </div>
                                     <?php if ($user['ja_amigo']): ?>
                                         <span class="amigos-badge">Amigo</span>
                                     <?php elseif ($user['solicitacao_recebida']): ?>
@@ -293,7 +293,13 @@ include('includes/hud_usuario.php');
                     <ul class="amigos-list">
                         <?php foreach ($solicitacoes_recebidas as $sol): ?>
                             <li class="amigos-item">
-                                <span class="amigos-name"><?php echo htmlspecialchars($sol['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                <div class="amigos-identity">
+                                    <span class="amigos-avatar" aria-hidden="true"></span>
+                                    <div>
+                                        <span class="amigos-name"><?php echo htmlspecialchars($sol['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                        <div class="amigos-status">Solicitação recebida</div>
+                                    </div>
+                                </div>
                                 <div class="amigos-actions">
                                     <form method="post" action="amigos.php" class="amigos-inline-form">
                                         <input type="hidden" name="acao" value="aceitar">
@@ -318,7 +324,13 @@ include('includes/hud_usuario.php');
                     <ul class="amigos-list">
                         <?php foreach ($solicitacoes_enviadas as $sol): ?>
                             <li class="amigos-item">
-                                <span class="amigos-name"><?php echo htmlspecialchars($sol['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                <div class="amigos-identity">
+                                    <span class="amigos-avatar" aria-hidden="true"></span>
+                                    <div>
+                                        <span class="amigos-name"><?php echo htmlspecialchars($sol['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                        <div class="amigos-status">Aguardando resposta</div>
+                                    </div>
+                                </div>
                                 <span class="amigos-badge amigos-badge-pending">Aguardando</span>
                             </li>
                         <?php endforeach; ?>
@@ -336,7 +348,13 @@ include('includes/hud_usuario.php');
                     <ul class="amigos-list">
                         <?php foreach ($amigos as $amigo): ?>
                             <li class="amigos-item">
-                                <span class="amigos-name"><?php echo htmlspecialchars($amigo['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                <div class="amigos-identity">
+                                    <span class="amigos-avatar" aria-hidden="true"></span>
+                                    <div>
+                                        <span class="amigos-name"><?php echo htmlspecialchars($amigo['nome_usuario'], ENT_QUOTES, 'UTF-8'); ?></span>
+                                        <div class="amigos-status">Amigo</div>
+                                    </div>
+                                </div>
                                 <form method="post" action="amigos.php" class="amigos-inline-form"
                                       onsubmit="return confirm('Remover este amigo?');">
                                     <input type="hidden" name="acao" value="remover">

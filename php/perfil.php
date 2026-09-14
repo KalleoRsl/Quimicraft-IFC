@@ -133,6 +133,8 @@ if (!preg_match('/^[a-zA-Z0-9_\-.]+\.php(\?[a-zA-Z0-9_\-=&.]*)?$/', $voltar)) {
                     <span class="perfil-trophy-badge"><?php echo $posicaoRanking; ?></span>
                 <?php endif; ?>
             </a>
+
+            <a class="btn perfil-logout" href="sair.php">SAIR</a>
         </div>
     </main>
 

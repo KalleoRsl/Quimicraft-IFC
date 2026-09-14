@@ -2,25 +2,26 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Redefinir Senha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir senha - Quimicraft</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bg form-page">
 
-    <a href="login.html" class="btn-voltar">←</a>
+    <a href="login.html" class="btn-voltar" aria-label="Voltar">←</a>
 
     <div class="container center">
-
+        <h1 class="brand-logo">QUIMI<span class="logo-soft">CRAFT</span></h1>
         <div class="card">
-
             <h1 class="titulo-card">REDEFINIR SENHA</h1>
 
             <form action="../php/redefinir_senha.php" method="POST">
+                <label class="field-label" for="nome">NOME DE USUÁRIO</label>
+                <input id="nome" type="text" name="nome" placeholder="Seu nome de usuário" class="input" required>
 
-                <input type="text" name="nome" placeholder="INSIRA SEU NOME DE USUÁRIO..." class="input" required>
-
-                <select name="turma" class="custom-select-native" required>
-                    <option value="">SELECIONE A TURMA</option>
+                <label class="field-label" for="turma">TURMA</label>
+                <select id="turma" name="turma" class="custom-select-native" required>
+                    <option value="">Selecione a turma</option>
                     <optgroup label="INFO">
                         <option value="1">1 INFO A</option>
                         <option value="2">1 INFO B</option>
@@ -45,23 +46,22 @@
                     </optgroup>
                 </select>
 
-                <input type="password" name="senha" placeholder="INSIRA A NOVA SENHA..." class="input" required>
+                <label class="field-label" for="senha">NOVA SENHA</label>
+                <input id="senha" type="password" name="senha" placeholder="Nova senha" class="input" required>
 
-                <input type="password" name="confirmar" placeholder="CONFIRME A NOVA SENHA..." class="input" required>
+                <label class="field-label" for="confirmar">CONFIRMAR SENHA</label>
+                <input id="confirmar" type="password" name="confirmar" placeholder="Repita a nova senha" class="input" required>
 
                 <div class="btn-container">
                     <button type="submit" class="btn">REDEFINIR</button>
                 </div>
 
                 <p class="texto-aux">
-                    LEMBROU A SENHA?
-                    <a href="login.html">FAZER LOGIN</a>
+                    Lembrou a senha?
+                    <a href="login.html">Fazer login</a>
                 </p>
-
             </form>
-
         </div>
-
     </div>
 
     <script src="../js/custom-select.js"></script>
