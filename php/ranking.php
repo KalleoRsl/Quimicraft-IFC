@@ -7,7 +7,6 @@ if (!isset($_SESSION['id_usuario'])) {
 }
 
 $nome = $_SESSION['nome_usuario'] ?? 'USUÁRIO';
-$turma = $_SESSION['id_turma'] ?? '';
 $foto = $_SESSION['foto_perfil'] ?? '';
 $id_usuario = (int)$_SESSION['id_usuario'];
 
@@ -86,7 +85,7 @@ mysqli_close($conexao);
             <?php echo renderHudAvatar($foto); ?>
             <div class="hud-usertext">
                 <div class="hud-username"><?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8'); ?></div>
-                <div class="hud-userinfo"><?php echo $turma !== '' ? ('TURMA ' . htmlspecialchars((string)$turma, ENT_QUOTES, 'UTF-8')) : ''; ?></div>
+                <div class="hud-userinfo"><?php echo renderHudTurma(); ?></div>
             </div>
         </div>
         <a class="hud-sair" href="principal.php">VOLTAR</a>
@@ -121,7 +120,6 @@ mysqli_close($conexao);
             <?php if (count($ranking) === 0): ?>
                 <div class="ranking-empty">
                     <p>Nenhuma pontuação registrada ainda.</p>
-                    <a class="btn ranking-play-btn" href="ranked.php">Jogar Rankeada</a>
                 </div>
             <?php else: ?>
                 <div class="ranking-table-wrap">

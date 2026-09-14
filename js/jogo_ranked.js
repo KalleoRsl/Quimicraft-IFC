@@ -51,8 +51,8 @@
             name: 'ACIDO SULFURICO',
             label: 'Ácido sulfúrico',
             result: 'H₂SO₄',
-            reactants: ['H', 'SO₄'],
-            inventory: ['H', 'SO₄', 'Cl', 'NO₃', 'OH', 'Na'],
+            reactants: ['H₂', 'SO₄'],
+            inventory: ['H', 'SO₄', 'Cl', 'NO₃', 'OH', 'H₂'],
             points: 95
         },
         {
@@ -71,8 +71,8 @@
             name: 'HIDROXIDO DE BARIO',
             label: 'Hidróxido de bário',
             result: 'Ba(OH)₂',
-            reactants: ['Ba', 'OH'],
-            inventory: ['Ba', 'OH', 'Na', 'K', 'Ca', 'Cl'],
+            reactants: ['Ba', '(OH)₂'],
+            inventory: ['Ba', 'OH', 'Na', 'K', 'Ca', 'Cl', '(OH)₂'],
             points: 100
         },
         {
@@ -81,8 +81,8 @@
             name: 'HIDROXIDO DE CALCIO',
             label: 'Hidróxido de cálcio',
             result: 'Ca(OH)₂',
-            reactants: ['Ca', 'OH'],
-            inventory: ['Ca', 'OH', 'O', 'Mg', 'Na', 'H'],
+            reactants: ['Ca', '(OH)₂'],
+            inventory: ['Ca', 'OH', '(OH)₂', 'Mg', 'Na', 'H'],
             points: 100
         },
         {
@@ -111,8 +111,8 @@
             name: 'CLORETO DE CALCIO',
             label: 'Cloreto de cálcio',
             result: 'CaCl₂',
-            reactants: ['Ca', 'Cl'],
-            inventory: ['Ca', 'Cl', 'Na', 'K', 'Mg', 'Br'],
+            reactants: ['Ca', 'Cl₂'],
+            inventory: ['Ca', 'Cl', 'Na', 'K', 'Mg', 'Br', 'Cl₂'],
             points: 110
         },
         {
@@ -141,8 +141,8 @@
             name: 'HIDROXIDO DE MAGNESIO',
             label: 'Hidróxido de magnésio',
             result: 'Mg(OH)₂',
-            reactants: ['Mg', 'OH'],
-            inventory: ['Mg', 'OH', 'Ca', 'Na', 'Ba', 'Cl'],
+            reactants: ['Mg', '(OH)₂'],
+            inventory: ['Mg', 'OH', 'Ca', 'Na', 'Ba', 'Cl', '(OH)₂'],
             points: 120
         },
         {

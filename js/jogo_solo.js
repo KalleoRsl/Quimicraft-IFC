@@ -99,7 +99,7 @@
             label: 'Óxido de cálcio (cal viva)',
             result: 'CaO',
             reactants: ['Ca', 'O'],
-            inventory: ['Ca', 'O', 'O₂', 'OH', 'Cl', 'Na', 'K', 'CO₂'],
+            inventory: ['Ca', 'O', 'O₂', 'OH', 'Cl', 'Na', 'Ca₂', 'CO₂'],
             time: 22
         }
     ];

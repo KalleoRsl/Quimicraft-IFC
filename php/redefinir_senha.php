@@ -1,5 +1,6 @@
 <?php
 include("conexao.php");
+include("includes/alerta.php");
 
 $nome = trim($_POST['nome'] ?? '');
 $senha = $_POST['senha'] ?? '';
@@ -7,21 +8,18 @@ $confirmar = $_POST['confirmar'] ?? '';
 $turma = $_POST['turma'] ?? '';
 
 if ($nome === '' || $senha === '' || $confirmar === '' || $turma === '') {
-    echo "<script>alert('Preencha todos os campos!'); window.history.back();</script>";
-    exit();
+    redirecionarAlerta("../html/redefinir_senha.html", "erro", "Preencha todos os campos!");
 }
 
 if ($senha !== $confirmar) {
-    echo "<script>alert('As senhas não coincidem!'); window.history.back();</script>";
-    exit();
+    redirecionarAlerta("../html/redefinir_senha.html", "erro", "As senhas não coincidem!");
 }
 
 $sql = "SELECT id_usuario FROM usuarios WHERE nome_usuario = ? AND id_turma = ? LIMIT 1";
 $stmt = mysqli_prepare($conexao, $sql);
 
 if (!$stmt) {
-    echo "<script>alert('Erro ao preparar consulta!'); window.history.back();</script>";
-    exit();
+    redirecionarAlerta("../html/redefinir_senha.html", "erro", "Erro ao preparar consulta!");
 }
 
 mysqli_stmt_bind_param($stmt, "si", $nome, $turma);
@@ -31,8 +29,7 @@ $usuario = $result ? mysqli_fetch_assoc($result) : null;
 mysqli_stmt_close($stmt);
 
 if (!$usuario) {
-    echo "<script>alert('Usuário ou turma inválidos!'); window.history.back();</script>";
-    exit();
+    redirecionarAlerta("../html/redefinir_senha.html", "erro", "Usuário ou turma inválidos!");
 }
 
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
@@ -43,11 +40,11 @@ $stmtUpdate = mysqli_prepare($conexao, $sqlUpdate);
 mysqli_stmt_bind_param($stmtUpdate, "si", $senhaHash, $id);
 
 if (mysqli_stmt_execute($stmtUpdate)) {
-    echo "<script>alert('Senha redefinida com sucesso!'); window.location='../html/login.html';</script>";
-} else {
-    echo "<script>alert('Erro ao redefinir senha!'); window.history.back();</script>";
+    mysqli_stmt_close($stmtUpdate);
+    mysqli_close($conexao);
+    redirecionarAlerta("../html/login.html", "sucesso", "Senha redefinida com sucesso!");
 }
 
 mysqli_stmt_close($stmtUpdate);
 mysqli_close($conexao);
-?>
+redirecionarAlerta("../html/redefinir_senha.html", "erro", "Erro ao redefinir senha!");
